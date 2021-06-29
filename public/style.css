@@ -1,0 +1,98 @@
+html {
+    background-color: #040f4d;
+    font-size: 4vmin;
+    font-family: 'Old Standard TT', serif;
+    color: #f49f1c;
+    height: 100vh;
+}
+.main{
+ }
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.container{
+    margin: 1rem;
+    color: #f49f1c;
+    padding:  1rem 2rem;
+    border: solid;
+    border-width: 2px;
+    border-radius: 10px;
+    text-align: center;
+    width: clamp(9rem,30%,40%) ;
+    margin-bottom: 3rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.wrap{
+    white-space: normal;
+    overflow: visible;
+}
+
+@keyframes fadeincontainer{
+    from {color: #f49e1c00;}
+    to {color: #f49f1c;}
+  }
+
+  @keyframes fadeoutbutton{
+    from {color: #f49f1c; border: 2px #f49f1c solid;}
+    to {color: #040f4d00; border: 2px #040f4d00 solid; background-color: #040f4d;}
+  }
+
+.anim {
+    animation-name: fadeincontainer;
+    animation-duration: 2s;
+}
+
+.animfadeoutbutton {
+    animation-name: fadeoutbutton;
+    animation-duration: 0.5s;
+}
+
+.button{
+    font-family: 'Old Standard TT', serif;
+    padding: 1rem 1rem;
+    background-color: #00000000;
+    border: 2px #f49f1c solid;
+    color: #f49f1c;
+    border-radius: 15px;
+    font-size: 4vmin;
+    
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+}
+
+.buttonhover:hover{
+    background-color: #f49f1c; /* Green */
+    color: #040f4d;
+
+}
+
+.footer{
+    position: fixed;
+    background-color: #040f4d;
+    font-size: 2vh;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #f49f1c;
+}
+a:hover{
+    text-decoration: underline;
+    color: #fff455;
+
+}
