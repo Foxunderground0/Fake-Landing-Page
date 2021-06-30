@@ -1,3 +1,14 @@
-html{
-    background-color: aqua;
+html {
+	background-color: rgb(18, 16, 41);
+	color: rgb(255, 253, 225);
+}
+form {
+	margin: auto;
+	width: 50%;
+	text-align: center;
+}
+input {
+	background-color: transparent;
+	border-style: solid;
+	border-color: rgb(255, 253, 225);
 }

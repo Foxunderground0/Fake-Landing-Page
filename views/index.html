@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-  	<head>
-		<link rel="stylesheet" href="style.css">
-		<script type="text/javascript">
 
-		</script>
-		
-	</head>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+		function submit() {
+			console.log(document.getElementById('username').value);
+			console.log(document.getElementById('password').value);
+		}
+	</script>
+</head>
 
+<body>
+	<form>
+		<label>Username:</label><br>
+		<input type="text" id="username"><br>
+		<label>Password:</label><br>
+		<input type="password" id="password"><br><br>
+		
+		<button onclick="submit()">Submit</button>
+	</form>
 
-	<body>
-		
-		<form action="/action_page.php">
-			<label>Username:</label><br>
-			<input type="text" id="username"><br>
-			<label>Password:</label><br>
-			<input type="text" id="password"><br><br>
-			<input type="submit" value="Login">
-		</form> 
-		
-		<div class="footer">
-			<p>Free WIFI Brought To You By XYZ Hotel</a></p>
-		</div>
-	
-	</body>
+	<div class="footer">
+		<p>Free WIFI Brought To You By XYZ Hotel</a></p>
+	</div>
+</body>
+
 </html>
