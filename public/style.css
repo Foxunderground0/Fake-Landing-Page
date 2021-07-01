@@ -1,14 +1,102 @@
 html {
-	background-color: rgb(18, 16, 41);
+	background: rgb(135, 0, 139);
+	background: linear-gradient(
+		133deg,
+		rgba(135, 0, 139, 1) 0%,
+		rgba(0, 174, 209, 1) 100%
+	);
+	background-size: 150% 150%;
 	color: rgb(255, 253, 225);
+	animation: gradient 15s ease infinite;
 }
-form {
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.inputbox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(26, 26, 26, 0.623);
 	margin: auto;
-	width: 50%;
+	width: 60vw;
+	height: 80vh;
+	text-align: center;
+	transition: ease-in-out 0.75s;
+}
+
+.inputbox:hover {
+	background-color: rgba(26, 26, 26, 0.8);
+}
+
+.input {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -55%);
 	text-align: center;
 }
+
 input {
+	margin: 1.5vmax;
+	font-size: 2vmax;
+	text-align: center;
 	background-color: transparent;
 	border-style: solid;
 	border-color: rgb(255, 253, 225);
+	color: rgb(255, 253, 225);
+	width: 14em;
+	height: 3em;
+	border-radius: 100px;
+	outline: none;
+	transition: ease-in-out 0.5s;
+}
+
+input:hover {
+	background-color: rgba(255, 255, 255, 0.007);
+	box-shadow: 0 0px 30px rgba(255, 255, 255, 0.096);
+}
+
+button {
+	margin-top: 2.3vmax;
+	font-size: 1.5vmax;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.171);
+	border-style: solid;
+	border-color: rgb(255, 253, 225);
+	color: rgb(255, 253, 225);
+	width: 9em;
+	height: 3em;
+	border-radius: 100px;
+	outline: none;
+	transition: ease-in-out 0.5s;
+}
+
+button:hover {
+	background-color: rgba(255, 255, 255, 0.007);
+	box-shadow: 0 0px 30px rgba(255, 255, 255, 0.096);
+}
+
+button:active {
+	transition: ease-in-out 0.05s;
+	background-color: rgba(255, 255, 255, 0.137);
+}
+.footer {
+	position: fixed;
+	background-color: #000000fd;
+	font-size: 1.5vh;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
 }
