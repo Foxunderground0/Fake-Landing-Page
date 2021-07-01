@@ -1,19 +1,22 @@
 {
-  "name": "fake-landing-page",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Foxunderground/Fake-Landing-Page.git"
-  },
-  "author": "Foxunderground",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Foxunderground/Fake-Landing-Page/issues"
-  },
-  "homepage": "https://github.com/Foxunderground/Fake-Landing-Page#readme"
+	"name": "fake-landing-page",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"express": "4.17.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Foxunderground/Fake-Landing-Page.git"
+	},
+	"author": "Foxunderground",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Foxunderground/Fake-Landing-Page/issues"
+	},
+	"homepage": "https://github.com/Foxunderground/Fake-Landing-Page#readme"
 }
