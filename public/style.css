@@ -29,14 +29,15 @@ html {
 	transform: translate(-50%, -50%);
 	background-color: rgba(26, 26, 26, 0.623);
 	margin: auto;
-	width: 90vw;
+	width: 95vmin;
 	height: 80vh;
 	text-align: center;
-	transition: ease-in-out 0.75s;
+	border-radius: 80px 10px 80px 10px;
+	transition: ease-in-out 0.25s;
 }
 
 .inputbox:hover {
-	background-color: rgba(26, 26, 26, 0.8);
+	background-color: rgba(20, 20, 20, 0.787);
 }
 
 .input {
@@ -59,12 +60,12 @@ input {
 	height: 3em;
 	border-radius: 100px;
 	outline: none;
-	transition: ease-in-out 0.5s;
+	transition: ease-in-out 0.25s;
 }
 
 input:hover {
 	background-color: rgba(255, 255, 255, 0.007);
-	box-shadow: 0 0px 30px rgba(255, 255, 255, 0.096);
+	box-shadow: 0 0px 30px rgba(255, 255, 255, 0.534);
 }
 
 button {
@@ -79,17 +80,17 @@ button {
 	height: 3em;
 	border-radius: 100px;
 	outline: none;
-	transition: ease-in-out 0.5s;
+	transition: ease-in-out 0.25s;
 }
 
 button:hover {
-	background-color: rgba(255, 255, 255, 0.007);
-	box-shadow: 0 0px 30px rgba(255, 255, 255, 0.096);
+	background-color: rgba(0, 0, 0, 0.322);
+	box-shadow: 0 0px 30px rgba(255, 255, 255, 0.534);
 }
 
 button:active {
 	transition: ease-in-out 0.05s;
-	background-color: rgba(255, 255, 255, 0.137);
+	background-color: rgba(1, 0, 53, 0.568);
 }
 .footer {
 	position: fixed;
