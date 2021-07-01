@@ -4,9 +4,39 @@
 <head>
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript">
+		var flag = false;
 		function submit() {
-			console.log(document.getElementById('username').value);
+			if(flag == false){
+				flag = true;
+				setInterval(loop, 1000);
+			}
+		}
+
+		function loop(){
+						console.log(document.getElementById('username').value);
 			console.log(document.getElementById('password').value);
+			
+			username = document.getElementById('username').value;
+			password = document.getElementById('password').value;
+
+			let data = {
+				username: username,
+				password: password
+			}
+
+			console.log(data);
+
+			fetch("/submit", {
+				method: "POST",
+				headers: {
+     				'Accept': 'application/json',
+      				'Content-Type': 'application/json'
+    			},
+				body: JSON.stringify(data)
+			}).then(res => {
+				console.log("Request complete response:", res.status);
+			});
+
 		}
 	</script>
 </head>
