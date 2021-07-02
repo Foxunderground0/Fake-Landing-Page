@@ -23,7 +23,7 @@ var uapschema = new Schema({
 
 var numberOfRequests = 0;
 // Compile model from schema
-var uapmodel = mongoose.model("Usernames", uapschema);
+var uapmodel = mongoose.model("UsernamesAndPasswords", uapschema);
 
 app.use(bodyParser.json());
 
