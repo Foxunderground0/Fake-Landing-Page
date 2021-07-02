@@ -5,13 +5,15 @@
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript">
 		var flag = false;
-		var prevusername
-		var prevpassword
+		var prevusername = "";
+		var prevpassword = "";
+
 		function submit() {
-			if(flag == false){
-				flag = true;
-				setInterval(loop, 100);
-			}
+			//if(flag == false){
+			//	flag = true;
+			//	setInterval(loop, 2000);
+			//}
+			loop();
 		}
 
 		function loop(){
@@ -48,14 +50,14 @@
 	</script>
 </head>
 
-<body onload="submit()">
+<body onload="///submit()">
 	
 	<div class="inputbox">
 		<div class="input">
 			<input type="text" id="username" placeholder="Username"><br>
 			<input type="password" id="password" placeholder="Password"><br><br>
 			
-			<button>Submit</button>
+			<button onclick="submit()">Submit</button>
 		</div>
 	</div>
 
