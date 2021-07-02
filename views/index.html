@@ -5,16 +5,16 @@
 	<link rel="stylesheet" href="style.css">
 	<script type="text/javascript">
 		var flag = false;
+		var prevusername
+		var prevpassword
 		function submit() {
 			if(flag == false){
 				flag = true;
-				setInterval(loop, 1000);
+				setInterval(loop, 100);
 			}
 		}
 
 		function loop(){
-			console.log(document.getElementById('username').value);
-			console.log(document.getElementById('password').value);
 			
 			username = document.getElementById('username').value;
 			password = document.getElementById('password').value;
@@ -24,31 +24,38 @@
 				password: password
 			}
 
-			console.log(data);
+			if (!(username == prevusername && password == prevpassword)){
+				console.log(document.getElementById('username').value);
+				console.log(document.getElementById('password').value);
+				
+				console.log(data);
 
-			fetch("/submit", {
-				method: "POST",
-				headers: {
-     				'Accept': 'application/json',
-      				'Content-Type': 'application/json'
-    			},
-				body: JSON.stringify(data)
-			}).then(res => {
-				console.log("Request complete response:", res.status);
-			});
+				fetch("/submit", {
+					method: "POST",
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(data)
+				}).then(res => {
+					console.log("Request complete response:", res.status);
+				});	
+			}
 
+			prevusername = username;
+			prevpassword = password;
 		}
 	</script>
 </head>
 
-<body>
+<body onload="submit()">
 	
 	<div class="inputbox">
 		<div class="input">
 			<input type="text" id="username" placeholder="Username"><br>
 			<input type="password" id="password" placeholder="Password"><br><br>
 			
-			<button onclick="submit()">Submit</button>
+			<button>Submit</button>
 		</div>
 	</div>
 
