@@ -40,7 +40,7 @@ app.post("/submit", (req, res) => {
 	let username = req.body.username;
 	let password = req.body.password;
 	console.log(username, password);
-	let ip = req.rawHeaders[13];
+	let ip = req.headers["x-forwarded-for"];
 	uapmodel.create(
 		{
 			username: username,
